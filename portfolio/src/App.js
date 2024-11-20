@@ -3,17 +3,15 @@ import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
 import {Button} from 'react-bootstrap';
 
 import Home from "./components/Home";
-
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <nav>
-          <Link to ="/Home">Home</Link>
-        </nav>
+        <Navbar/>
         <Routes>
-          <Route path ="/Home" element = {<Home />} />
+          <Route path ="/" element = {<Home />} />
         </Routes>
       </div>
     </Router>
