@@ -1,15 +1,16 @@
 import React from "react";
 import {Button} from 'react-bootstrap';
+//import './Home.css';
+import GradientBackground from "./GradientBackground.js";
 
 
-function Home() {
+const Home = () => {
     return (
-    <div className="Home">
-        <h1>Welcome to the home page. Nerd!"</h1>;
-        <Button variant="primary"></Button>
-    </div>
+      <GradientBackground>
+        <h1 className="text-white text-4xl font-bold">Welcome to My Portfolio!</h1>
+        <p className="text-white mt-4">This is a React app styled with Tailwind CSS.</p>
+      </GradientBackground>
     );
-}
-
+  };
 
 export default Home;

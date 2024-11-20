@@ -1,0 +1,9 @@
+body {
+    background-color: #ff0000 !important; /* Light gray background */
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start; /* Align to the top */
+  }

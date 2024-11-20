@@ -4,19 +4,21 @@ import {Button} from 'react-bootstrap';
 
 import Home from "./components/Home";
 
+
 function App() {
   return (
     <Router>
       <div className="App">
         <nav>
-          <Link to ="/">Home</Link>
+          <Link to ="/Home">Home</Link>
         </nav>
         <Routes>
-          <Route path ="/" element = {<Home />} />
+          <Route path ="/Home" element = {<Home />} />
         </Routes>
       </div>
     </Router>
   );
 }
+
 
 export default App;
