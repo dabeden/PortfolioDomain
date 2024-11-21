@@ -8,13 +8,13 @@ const Navbar = () => {
                 <h1 className="text-white text-lg font-bold">My Portfolio</h1>
                 <ul className="flex space-x-4">
                     <li>
-                        <Link to="/PortfolioDomain/" className="text-gray-300 hover:text-white">Home</Link>
+                        <Link to="/" className="text-gray-300 hover:text-white">Home</Link>
                     </li>
                     <li>
-                        <Link to="/PortfolioDomain/aboutme" className="text-gray-300 hover:text-white">About</Link>
+                        <Link to="/aboutme" className="text-gray-300 hover:text-white">About</Link>
                     </li>
                     <li>
-                        <Link to="/PortfolioDomain/contactme" className="text-gray-300 hover:text-white">Contact</Link>
+                        <Link to="/contactme" className="text-gray-300 hover:text-white">Contact</Link>
                     </li>
                 </ul>
             </div>
