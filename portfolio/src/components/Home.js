@@ -18,9 +18,9 @@ const Home = () => {
 
     return (
     <div>
-        <GradientBackground>
+        <GradientBackground fromColor="rgb(128, 161, 212)" viaColor="rgb(137, 152, 120)" toColor="rgb(224, 175, 160)">
             <h1 className="text-white text-4xl font-bold">Welcome to My Portfolio!</h1>
-            <p className="text-white mt-4">This is a React app styled with Tailwind CSS.</p>
+            <p className="text-white mt-4">React App w/ Tailwind Css</p>
         </GradientBackground>
     <div className>
     
