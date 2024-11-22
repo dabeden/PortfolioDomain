@@ -1,9 +1,12 @@
-import React from "react";
+import {Suspense, React} from "react";
 import {Button} from 'react-bootstrap';
-//import './Home.css';
+import {Canvas} from '@react-three/fiber';
 import GradientBackground from "./GradientBackground.js";
 import Card from "./Card";
 import Grid from "./Grid";
+import Loader from "./Loader";
+import Island from "../models/Island.jsx"
+import Cottage from "../models/Cottage.jsx"
 
 const Home = () => {
     const images = [
@@ -15,30 +18,73 @@ const Home = () => {
         { src: "images/sword_in_stone.png", title: "Sword in the Stone", description: "Made in Blender for animation and scene setting practice"},
         { src: "images/acme_spaceship.png", title: "Alien Spaceship", description: "Made in Blender for exporting into Unreal Engine"},
     ];
-
-    return (
-    <div>
-        <GradientBackground fromColor="rgb(128, 161, 212)" viaColor="rgb(137, 152, 120)" toColor="rgb(224, 175, 160)">
-            <h1 className="text-white text-4xl font-bold">Welcome to My Portfolio!</h1>
-            <p className="text-white mt-4">React App w/ Tailwind Css</p>
-        </GradientBackground>
-    <div className>
     
-        <div className="bg-gray-100 min-h-screen p-2">
-            <h1 className="text-3xl font-bold text-center mb-8">My Cards</h1>
-            <Grid>
-                {images.map((image,index) => (
-                    <Card
-                        key={index}
-                        imageUrl={image.src}
-                        title={image.title}
-                        description={image.description}
+    const adjustCottageForScreenSize = () => {
+        let screenScale = null;
+        let screenPosition = [0, -6.5, -43];
+        //let islandRotation = [45, 4, 0];
+        let cottageRotation = [.6, 3.8, 0];
+    
+
+        if(window.innerWidth < 768){
+            screenScale = [14, 14, 14];
+            screenPosition = [0, -6.5, -43];
+        } else { 
+            screenScale = [17, 17, 17];
+            screenPosition = [10, -8, -50];
+        }
+
+
+        return [screenScale, screenPosition, cottageRotation];
+       // return [screenScale, screenPosition, islandRotation];
+    
+    }
+
+    const adjustIslandForScreenSize = () => {
+        let screenScale = null;
+        let screenPosition = [0, -6.5, -43];
+        //let islandRotation = [45, 4, 0];
+        let islandRotation = [45, 0, 0];
+    
+
+        if(window.innerWidth < 768){
+            screenScale = [14, 14, 14];
+            screenPosition = [0, -6.5, -43];
+        } else { 
+            screenScale = [17, 17, 17];
+            screenPosition = [0, -6.5, -43];
+        }
+
+
+        
+        return [screenScale, screenPosition, islandRotation];
+    
+    }
+
+    //const [islandScale, islandPosition, islandRotation] = adjustModelForScreenSize();
+    const [cottageScale, cottagePosition, cottageRotation] = adjustCottageForScreenSize();
+    return (
+        <section className="w-fill h-screen relative">
+            <Canvas
+                className="we-full h-screen bg-transparent"
+                camera={{near: 0.1, far: 1000}}
+            >
+                <Suspense fallback={<Loader />}>
+                    <directionalLight position={[1,1,1]} intensity={2} />
+                    <ambientLight />
+                    <pointLight />
+                    <spotLight />
+                    <hemisphereLight/>
+                    <Cottage
+                        position={cottagePosition}
+                        scale={cottageScale}
+                        rotation={cottageRotation}
                     />
-                ))}
-                </Grid>
-            </div>
-        </div>
-    </div>
+                </Suspense>
+            </Canvas>
+        </section>
+
+
       
     );
   };

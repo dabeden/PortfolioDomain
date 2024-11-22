@@ -1,11 +1,9 @@
 import React from 'react';
 import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
 import {Button} from 'react-bootstrap';
+import {Home, About, Project, Contact} from './components/index';
+import Navbar from './components/Navbar';
 
-import Home from "./components/Home";
-import Navbar from "./components/Navbar";
-import Contact from "./components/Contact"
-import About from "./components/About"
 
 function App() {
   return (
