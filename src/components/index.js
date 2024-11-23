@@ -1,6 +1,8 @@
-import Home from './Home';
-import Contact from './Contact';
-import About from './About';
-import Project from './Project';
+import Card from './Card';
+import GradientBackground from './GradientBackground';
+import Grid from './Grid';
+import HoverButton from './HoverButton';
+import Loader from './Loader';
+import Navbar from './Navbar';
 
-export { Home, About, Project, Contact };
+export { Card, GradientBackground, Grid, HoverButton, Loader, Navbar };

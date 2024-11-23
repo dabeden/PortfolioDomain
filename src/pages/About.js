@@ -1,5 +1,5 @@
 import React from "react";
-import GradientBackground from "./GradientBackground";
+import GradientBackground from "../components/GradientBackground";
 
 const About = () => {
     return (

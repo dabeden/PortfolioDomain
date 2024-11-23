@@ -1,12 +1,10 @@
 import {Suspense, React} from "react";
 import {Button} from 'react-bootstrap';
 import {Canvas} from '@react-three/fiber';
-import GradientBackground from "./GradientBackground.js";
-import Card from "./Card";
-import Grid from "./Grid";
-import Loader from "./Loader";
+import {GradientBackground, Card, Grid, Loader} from '../components/index.js';
 import Island from "../models/Island.jsx"
 import Cottage from "../models/Cottage.jsx"
+import Sky from "../models/Sky.jsx"
 
 const Home = () => {
     const images = [
@@ -75,11 +73,15 @@ const Home = () => {
                     <pointLight />
                     <spotLight />
                     <hemisphereLight skycolor="#b1e1ff" groundColor="#000000" intensity={1}/>
+
+                    
+                    <Sky />
                     <Cottage
                         position={cottagePosition}
                         scale={cottageScale}
                         rotation={cottageRotation}
                     />
+                    
                 </Suspense>
             </Canvas>
         </section>
