@@ -1,4 +1,4 @@
-import {Suspense, React, useRef, useEffect, useState} from "react";
+import {Suspense, React, useRef, useEffect, useState, forwardRef} from "react";
 import {Button} from 'react-bootstrap';
 import {Canvas} from '@react-three/fiber';
 import {GradientBackground, Card, Grid, Loader} from '../components/index.js';
@@ -15,44 +15,40 @@ const Home = () => {
         { src: "images/sword_in_stone.png", title: "Sword in the Stone", description: "Made in Blender for animation and scene setting practice"},
       
     ];
+
+    const cottageRef = useRef();
     
+
     const [currentStage, setCurrentStage] = useState(1);
     const [isRotating, setIsRotating] = useState(false);
     const [isPlayingMusic, setIsPlayingMusic] = useState(false);
 
     const adjustCottageForScreenSize = () => {
-        let screenScale = null;
-        let screenPosition = [0, -6.5, -43];
-
-        let rotation = [.5, 4, 0];
+        let screenScale, screenPosition;
     
-
-        if(window.innerWidth < 768){
-            screenScale = [14, 14, 14];
-            screenPosition = [0, -6.5, -43];
-        } else { 
-            screenScale = [17, 17, 17];
-            screenPosition = [0, -8, -50];
+        if (window.innerWidth < 768) {
+          screenScale = [10, 10, 10];
+          screenPosition = [0, -6.5, -43.4];
+        } else {
+          screenScale = [15, 15, 15];
+          screenPosition = [0, -6.5, -43.4];
         }
-
-
-        return [screenScale, screenPosition, rotation];
-       // return [screenScale, screenPosition, islandRotation];
     
-    }
-
+        return [screenScale, screenPosition];
+      };
+    
+    
+    
+    
     const adjustUfoForScreenSize = () => {
         let screenScale, screenPosition;
     
-       
-    
-
         if(window.innerWidth < 768){
-            screenScale = [1.5, 1.5, 1.5];
-            screenPosition = [0, -1.5, 0];
+            screenScale = [1, 1, 1];
+            screenPosition = [0, -6.5, 5];
         } else { 
-            screenScale = [3, 3, 3];
-            screenPosition = [0, -4, -4];
+            screenScale = [1, 1, 1];
+            screenPosition = [0, 5, -10];
         }
 
 
@@ -62,7 +58,7 @@ const Home = () => {
     }
 
     //const [islandScale, islandPosition, islandRotation] = adjustModelForScreenSize();
-    const [cottageScale, cottagePosition, cottageRotation] = adjustCottageForScreenSize();
+    const [cottageScale, cottagePosition] = adjustCottageForScreenSize();
     const [ufoScale, ufoPosition] = adjustUfoForScreenSize();
 
     return (
@@ -83,19 +79,21 @@ const Home = () => {
                     
                     <Sky />
                     <Cottage
-                        position={cottagePosition}
-                        scale={cottageScale}
-                        rotation={cottageRotation}
                         isRotating={isRotating}
                         setIsRotating={setIsRotating}
-                    />
+                        setCurrentStage={setCurrentStage}
+                        position={cottagePosition}
+                        scale={cottageScale}
+                        rotation={[0.1, 4.7, 0]}
+                        
+                    />;
                     
                     <Ufo
                         isRotating={isRotating}
-                        ufoScale={ufoScale}
-                        ufoPosition={ufoPosition}
-                        rotation={[0, 20, 0]}
-                    />
+                        scale={ufoScale}
+                        position={ufoPosition}
+                        rotation={[.5, 5, 0]}
+                    />;
                     
                 </Suspense>
             </Canvas>
