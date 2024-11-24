@@ -7,6 +7,7 @@ import Island from "../models/Island.jsx"
 import Cottage from "../models/Cottage.jsx"
 import Sky from "../models/Sky.jsx"
 import Ufo from "../models/Ufo.jsx";
+import Grass from "../components/Grass.js";
 
 const Home = () => {
     const images = [
@@ -88,6 +89,7 @@ const Home = () => {
                         isRotating={isRotating}
                         setIsRotating={setIsRotating}
                     />
+                    
                     <Ufo
                         isRotating={isRotating}
                         ufoScale={ufoScale}
