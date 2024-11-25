@@ -8,6 +8,7 @@ import Cottage from "../models/Cottage.jsx"
 import Sky from "../models/Sky.jsx"
 import Ufo from "../models/Ufo.jsx";
 import Grass from "../components/Grass.js";
+import Fish from "../models/Fish.jsx";
 
 const Home = () => {
     const images = [
@@ -45,10 +46,10 @@ const Home = () => {
     
         if(window.innerWidth < 768){
             screenScale = [1, 1, 1];
-            screenPosition = [0, -6.5, 5];
+            screenPosition = [0, 5.2, -10];
         } else { 
             screenScale = [1, 1, 1];
-            screenPosition = [0, 5, -10];
+            screenPosition = [0, 5.2, -10];
         }
 
 
@@ -77,7 +78,11 @@ const Home = () => {
                     <hemisphereLight skycolor="#b1e1ff" groundColor="#000000" intensity={1}/>
 
                     
-                    <Sky />
+                    <Sky 
+                    isRotating={isRotating}
+                    rotation={[0,0,0]}
+                    />;
+                    
                     <Cottage
                         isRotating={isRotating}
                         setIsRotating={setIsRotating}
@@ -94,6 +99,7 @@ const Home = () => {
                         position={ufoPosition}
                         rotation={[.4, 5.2, -.2]}
                     />;
+                    <Fish />;
                     
                 </Suspense>
             </Canvas>

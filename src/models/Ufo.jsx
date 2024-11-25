@@ -12,15 +12,25 @@ const Ufo = ({ isRotating, ...props }) => {
     const bobbingSpeed = 4.5; // Adjust speed of bobbing
     const bobbingHeight = 0.4; // Adjust how high it bobs
 
+    const initialPosition = useRef([0, 0, 0]);
+
+    //Initialize initial position
+    useEffect(() => {
+        if (ref.current) {
+            initialPosition.current = [...ref.current.position];
+        }
+    }, []);
+
     // Animation loop for bobbing
     useFrame((state) => {
-        if(isRotating){
-        const time = state.clock.getElapsedTime(); // Get elapsed time
-        if (ref.current) {
-            ref.current.position.y = Math.sin(time * bobbingSpeed) * bobbingHeight;
+        if (isRotating && ref.current) {
+            const time = state.clock.getElapsedTime(); // Get elapsed time
+            const [x, y, z] = initialPosition.current;
+            // Apply bobbing effect as an offset to the initial position
+            ref.current.position.set(x, y + Math.sin(time * bobbingSpeed) * bobbingHeight, z);
         }
-    }
     });
+
 
     return (
         <mesh {...props} ref={ref}>
