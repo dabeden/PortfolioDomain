@@ -92,7 +92,7 @@ const Home = () => {
                         isRotating={isRotating}
                         scale={ufoScale}
                         position={ufoPosition}
-                        rotation={[.5, 5, 0]}
+                        rotation={[.4, 5.2, -.2]}
                     />;
                     
                 </Suspense>

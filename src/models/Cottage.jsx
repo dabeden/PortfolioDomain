@@ -14,7 +14,7 @@ export function Cottage({
   ...props
 }) {
   const cottageRef = useRef();
-  console.log("CottageRef:", cottageRef);
+  //console.log("CottageRef:", cottageRef);
   // Get access to the Three.js renderer and viewport
   const { gl, viewport } = useThree();
   const { nodes, materials } = useGLTF(CottageScene);

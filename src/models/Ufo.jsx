@@ -1,20 +1,33 @@
 import { useEffect, useRef } from "react";
-import { useGLTF, useAnimations } from "@react-three/drei";
+import { useGLTF } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber"; // Correct import for useFrame
 
-import ufoScene from '../assets/ufo.glb'
+import ufoScene from '../assets/ufo.glb';
 
 const Ufo = ({ isRotating, ...props }) => {
     const ref = useRef();
-    //load 3d model and it's animations
-    const { scene, animations } = useGLTF(ufoScene);
-    const { actions } = useAnimations(animations,ref);
+    const { scene } = useGLTF(ufoScene);
+
+    // Bobbing animation variables
+    const bobbingSpeed = 4.5; // Adjust speed of bobbing
+    const bobbingHeight = 0.4; // Adjust how high it bobs
+
+    // Animation loop for bobbing
+    useFrame((state) => {
+        if(isRotating){
+        const time = state.clock.getElapsedTime(); // Get elapsed time
+        if (ref.current) {
+            ref.current.position.y = Math.sin(time * bobbingSpeed) * bobbingHeight;
+        }
+    }
+    });
+
     return (
         <mesh {...props} ref={ref}>
-          // use the primitive element when you want to directly embed a complex 3D
-          model or scene
-          <primitive object={scene} />
+            {/* Use the primitive element to embed the model */}
+            <primitive object={scene} />
         </mesh>
-      );
-    }
+    );
+};
 
 export default Ufo;
