@@ -7,8 +7,9 @@ import Island from "../models/Island.jsx"
 import Cottage from "../models/Cottage.jsx"
 import Sky from "../models/Sky.jsx"
 import Ufo from "../models/Ufo.jsx";
-import Grass from "../components/Grass.js";
+
 import Fish from "../models/Fish.jsx";
+import HomeInfo from "../components/HomeInfo.js"
 
 const Home = () => {
     const images = [
@@ -64,6 +65,9 @@ const Home = () => {
 
     return (
         <section className="w-fill h-screen relative">
+            <div className="absolute top-28 left-0 right-0 z-10 flex items-center justify-center">
+                {currentStage && <HomeInfo currentStage={currentStage} />}
+            </div>
             <Canvas
                 className={`we-full h-screen bg-transparent ${isRotating ? 
                 'cursor-grabbing' : 'cursor-grab'}`}
