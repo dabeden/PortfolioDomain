@@ -83,12 +83,12 @@ const Home = () => {
                     rotation={[0,0,0]}
                     />;
                     
-                    <Cottage
+                    <Island
                         isRotating={isRotating}
                         setIsRotating={setIsRotating}
                         setCurrentStage={setCurrentStage}
                         position={cottagePosition}
-                        scale={cottageScale}
+                        scale={[1,1,1]}
                         rotation={[0.1, 4.7, 0]}
                         
                     />;

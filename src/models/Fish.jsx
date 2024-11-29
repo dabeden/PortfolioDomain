@@ -8,7 +8,7 @@ import fishScene from "../assets/fish_animated.glb"
 //model and animations from 
 //https://sketchfab.com/3d-models/fish-animated-665ab73155a44d91908519d84e5fd002
 
-const Fish = () => {
+const Fish = ({...props}) => {
     const {scene, animations} = useGLTF(fishScene);
     const fishRef = useRef();
 
@@ -34,18 +34,18 @@ const Fish = () => {
         //Now, update the x and z positions based on the direction the fish is facing
         if(fishRef.current.rotation.y === 0) {
             //Forward Movement
-            fishRef.current.position.x -= 0.1;
-            fishRef.current.position.z += 0.1;
+            fishRef.current.position.x -= 0.01;
+            fishRef.current.position.z += 0.01;
 
         } else {
             //Backwards Movement
-            fishRef.current.position.x -= 0.1;
-            fishRef.current.position.z += 0.1
+            fishRef.current.position.x -= 0.01;
+            fishRef.current.position.z += 0.01;
         }
     });
 
     return (
-        <mesh position={[10,-10,-10]} scale={[.03,.03,.03]} ref = {fishRef}>
+        <mesh position={[0,-4,-10]} scale={[.003,.003,.003]} ref = {fishRef}>
             <primitive object={scene} />
         </mesh>
     )

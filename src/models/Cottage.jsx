@@ -6,6 +6,7 @@ import { useGLTF } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 
 import CottageScene from '../assets/painterly_cottage.glb';
+//import CottageScene from '../assets/island_decor.glb';
 export function Cottage({
   isRotating,
   setIsRotating,
