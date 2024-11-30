@@ -15,7 +15,9 @@ export default {
           500: "#1D2235"
         },
         blue: {
-          500: "#2b77e7"
+          500: "#2b77e7",
+          100: "#C9DAEA",
+          300: "#517AA0"
         }
       },
       fontFamily: {

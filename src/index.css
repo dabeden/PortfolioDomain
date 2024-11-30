@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -50,9 +50,6 @@ body:has(.card[data-color="green"]:hover) {
     @apply text-white bg-gradient-to-r from-[#00c6ff] to-[#0072ff] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center;
   }
 
-  .header {
-    @apply flex justify-between items-center sm:px-16 px-8 py-4 max-w-5xl mx-auto absolute top-0 bg-transparent z-10 right-0 left-0;
-  }
 
   .footer {
     @apply max-w-5xl mx-auto sm:px-16 pb-6 px-8 flex flex-col gap-7;
@@ -63,12 +60,17 @@ body:has(.card[data-color="green"]:hover) {
   }
 
   .info-box {
-    @apply mx-5 relative flex text-white flex-col gap-3 max-w-2xl neo-brutalism-blue pt-4 pb-12 px-8;
+    @apply mx-5 relative flex text-black-500 flex-col gap-3 max-w-2xl info-box-gs-blue pt-4 pb-12 px-8;
   }
 
   .neo-btn {
+    @apply py-3 px-6 rounded-lg text-blue-300 text-center font-semibold sm:w-1/2 w-[90%] -bottom-5 absolute mx-auto right-0 left-0 flex justify-center items-center gap-3;
+  }
+
+  .neo-btn-orange {
     @apply py-3 px-6 rounded-lg text-blue-500 text-center font-semibold sm:w-1/2 w-[90%] -bottom-5 absolute mx-auto right-0 left-0 flex justify-center items-center gap-3;
   }
+
 
   .cta {
     @apply w-full flex items-center md:flex-row flex-col sm:mt-16 mt-8 gap-7;
@@ -177,7 +179,22 @@ body:has(.card[data-color="green"]:hover) {
 
 .neo-brutalism-white {
   background: #fff;
-  border: #fff;
-  box-shadow: 0.6vmin 0.6vmin #fff, 1vmin 1vmin #d2e4ff, 1vmin 1vmin #d2e4ff,
-    0.65vmin 1vmin #d2e4ff, 1vmin 0.65vmin #d2e4ff;
+  border: 1px solid#fff;
+  box-shadow: 0.4vmin 0.4vmin #aacae7, 0.8vmin 0.8vmin #728da5,
+  0px 0px 0px 1px rgb(0, 0, 0, 1), 6px 6px 0px 1px rgb(0, 0, 0, 1), 10px 10px 0px 1px rgb(0, 0, 0, 1);
+    
+}
+
+.info-box-gs-blue {
+  background: #aacae7;  /* Orange Background */
+  border:  #000000;
+  border-radius:10px;
+  box-shadow: 1.4vmin 0vmin #7db8d3, 2.8vmin 0vmin #49a5af, 4.2vmin 0vmin #2a67ad,  5.6vmin 0vmin #180e46,
+  0px 0px 0px 1px rgb(0, 0, 0, 1), 70px 0px 0px 1px rgb(0, 0, 0, 1);
+
+}
+.neo-brutalism-orange-ns {
+  background: #f39c12;  /* Orange Background */
+  border: 1px solid #f0c194;
+  box-shadow: none;
 }
