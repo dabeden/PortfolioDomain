@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200..700&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200..700&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Jersey+10&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200..700&family=VT323&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -10,8 +12,10 @@
 }
 
 body {
-  font-family: "Work Sans", sans-serif;
+  font-family: "VT323", sans-serif;
 }
+
+
 
 body:has(.card[data-color="blue"]:hover) {
   background-color: rgb(var(--blue-rgb) / 25%);
@@ -60,7 +64,7 @@ body:has(.card[data-color="green"]:hover) {
   }
 
   .info-box {
-    @apply mx-5 relative flex text-black-500 flex-col gap-3 max-w-2xl info-box-gs-blue pt-4 pb-12 px-8;
+    @apply mx-5 relative flex text-white flex-col gap-3 max-w-2xl info-box-gs-peachtojet pt-4 pb-12 px-8;
   }
 
   .neo-btn {
@@ -171,7 +175,7 @@ body:has(.card[data-color="green"]:hover) {
 .neo-brutalism-blue {
   background: #2b77e7;
   position: relative;
-  border-radius: 10px;
+  border-radius: 1px;
   border: #2b77e7;
   box-shadow: 0.6vmin 0.6vmin #336cc1, 1vmin 1vmin #0092db, 1vmin 1vmin #0092db,
     0.65vmin 1vmin #0092db, 1vmin 0.65vmin #0092db;
@@ -181,20 +185,52 @@ body:has(.card[data-color="green"]:hover) {
   background: #fff;
   border: 1px solid#fff;
   box-shadow: 0.4vmin 0.4vmin #aacae7, 0.8vmin 0.8vmin #728da5,
-  0px 0px 0px 1px rgb(0, 0, 0, 1), 6px 6px 0px 1px rgb(0, 0, 0, 1), 10px 10px 0px 1px rgb(0, 0, 0, 1);
+  0.6vmin 1vmin rgb(0, 0, 0, 1), 0.2vmin 0.6vmin rgb(0, 0, 0, 1), -.2vmin .2vmin rgb(0, 0, 0, 1), 
+  1vmin 0.6vmin rgb(0, 0, 0, 1), .6vmin .2vmin rgb(0, 0, 0, 1), .2vmin -.2vmin rgb(0, 0, 0, 1),
+  1vmin 1vmin rgb(0, 0, 0, 1), -.2vmin -.2vmin rgb(0, 0, 0, 1);
     
 }
 
 .info-box-gs-blue {
   background: #aacae7;  /* Orange Background */
   border:  #000000;
-  border-radius:10px;
+  border-radius: 0px;
   box-shadow: 1.4vmin 0vmin #7db8d3, 2.8vmin 0vmin #49a5af, 4.2vmin 0vmin #2a67ad,  5.6vmin 0vmin #180e46,
-  0px 0px 0px 1px rgb(0, 0, 0, 1), 70px 0px 0px 1px rgb(0, 0, 0, 1);
+  -.2vmin -.2vmin rgb(0, 0, 0, 1),-.2vmin -.2vmin rgb(0, 0, 0, 1),-.2vmin -.2vmin rgb(0, 0, 0, 1);
 
 }
 .neo-brutalism-orange-ns {
   background: #f39c12;  /* Orange Background */
   border: 1px solid #f0c194;
   box-shadow: none;
+}
+
+
+.info-box-gs-peachtojet {
+  background: #1D2235;  /* Orange Background */
+  border:  0px solid#000000;
+  border-radius: 0px;
+  box-shadow: 1.4vmin 0vmin #F3D99D, 2.8vmin 0vmin #90E6DD, 4.2vmin 0vmin #EF626C,  5.6vmin 0vmin #22181C,
+-.1vmin -.1vmin #000000, 5.7vmin .1vmin  #000000,
+  -.1vmin .1vmin  #000000, 5.7vmin -.1vmin  #000000,
+  -.1vmin -.1vmin #000000, 5.7vmin .1vmin  #000000,
+  -.1vmin .1vmin  #000000, 5.7vmin -.1vmin  #000000,
+  -.1vmin -.1vmin #000000, 5.7vmin .1vmin  #000000,
+  -.1vmin .1vmin  #000000, 5.7vmin -.1vmin  #000000,
+  -.1vmin -.1vmin #000000, 5.7vmin .1vmin  #000000,
+  -.1vmin .1vmin  #000000, 5.7vmin -.1vmin  #000000;
+
+}
+
+.jersey-text {
+  font-family: "Jersey 10";
+}
+
+.dynapuff-text {
+  font-family: "Dyna Puff";
+}
+
+.navbar {
+  z-index: 100; /* Ensure it's higher than the canvas */
+  position: relative; /* Ensure the navbar's stacking context is set */
 }

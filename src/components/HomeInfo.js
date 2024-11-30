@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 const HomeInfo = ({ currentStage }) => {
   if (currentStage === 1)
     return (
-      <h1 className='sm:text-xl sm:leading-snug text-center info-box-gs-blue py-4 px-8 text-black-500 mx-5'>
+      <h1 className=' sm:text-xl lg:text-2xl sm:leading-snug text-center info-box-gs-peachtojet py-4 px-8 text-white mx-5'>
         Hello I'm
-        <span className='font-semibold mx-2 text-black-500'>Devon</span>
+        <span className='font-bold mx-2 text-yellow-100'>Devon</span>
         
         <br />
         A Software Engineer and Game Developer from Florida
@@ -33,7 +33,7 @@ const HomeInfo = ({ currentStage }) => {
     return (
       <div className='info-box'>
         <p className='font-medium text-center sm:text-xl'>
-          I'm currently looking to improve my skills by working with more experienced Developers. <br /> <span className='font-semibold mx-2 text-black-500'> Think I might make a good fit on your team? </span>
+          I'm currently looking to improve my skills by working with more experienced Developers. <br /> <span className='font-semibold mx-2 text-white'> Think I might make a good fit on your team? </span>
         </p>
 
         <Link to='/projects' className='neo-brutalism-white neo-btn'>

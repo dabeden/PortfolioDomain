@@ -3,7 +3,7 @@ import { useGLTF } from "@react-three/drei";
 import { useFrame } from '@react-three/fiber';
 
 
-import skyDrop from '../assets/sky.glb'
+import skyDrop from '../assets/skybox_default.glb'
 
 const Sky = ({isRotating, ...props}) => {
     const sky = useGLTF(skyDrop)
@@ -11,8 +11,8 @@ const Sky = ({isRotating, ...props}) => {
 
     useFrame((_, delta) => {
         if(isRotating){
-            skyRef.current.rotation.y += 0.06 *delta
-            skyRef.current.rotation.z += 0.06 *delta
+            skyRef.current.rotation.y += 0.03 *delta
+            skyRef.current.rotation.z += 0.003 *delta
         }
     })
 

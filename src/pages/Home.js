@@ -73,6 +73,7 @@ const Home = () => {
                 'cursor-grabbing' : 'cursor-grab'}`}
                 
                 camera={{near: 0.1, far: 1000}}
+                style={{marginTop:'-8px'}}
             >
                 <Suspense fallback={<Loader />}>
                     <directionalLight position={[1,1,1]} intensity={1} />
