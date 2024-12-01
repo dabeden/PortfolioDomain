@@ -3,13 +3,14 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
-  "keywords": [    
-  "noise",
-  "shader",
-  "simplex",
-  "grass"
+  "keywords": [
+    "noise",
+    "shader",
+    "simplex",
+    "grass"
   ],
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@react-spring/three": "^9.7.5",
     "@react-three/drei": "^9.117.3",
     "@react-three/fiber": "^8.17.10",
