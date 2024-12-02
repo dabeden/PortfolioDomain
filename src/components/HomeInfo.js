@@ -7,8 +7,8 @@ const HomeInfo = ({ currentStage }) => {
     return (
       <div className='info-box'>
         <p className=' font-medium  text-center silkscreen-regular reduce-spacing'>
-          Hello, I'm  <span className='font-semibold mx-2 text-yellow-100'> Devon </span>
-          <br/>Software Engineer and Game Developer based in Florida
+          Hello, I'm <span className='font-semibold mx-2 text-yellow-100'>Devon</span>
+          <br/>A Software Engineer and Game Developer based in Florida
         </p>
 
         <Link to='/aboutme' className='increase-spacing neo-brutalism-white neo-btn silkscreen-regular'>

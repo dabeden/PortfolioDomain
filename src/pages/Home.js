@@ -25,7 +25,7 @@ const Home = () => {
     const [isRotating, setIsRotating] = useState(false);
     const [isPlayingMusic, setIsPlayingMusic] = useState(false);
 
-    const adjustCottageForScreenSize = () => {
+    const adjustIslandForScreenSize = () => {
         let screenScale, screenPosition;
     
         if (window.innerWidth < 768) {
@@ -60,7 +60,7 @@ const Home = () => {
     }
 
     //const [islandScale, islandPosition, islandRotation] = adjustModelForScreenSize();
-    const [cottageScale, cottagePosition] = adjustCottageForScreenSize();
+    const [islandScale, islandPosition] = adjustIslandForScreenSize();
     const [ufoScale, ufoPosition] = adjustUfoForScreenSize();
 
     return (
@@ -92,8 +92,8 @@ const Home = () => {
                         isRotating={isRotating}
                         setIsRotating={setIsRotating}
                         setCurrentStage={setCurrentStage}
-                        position={cottagePosition}
-                        scale={[1,1,1]}
+                        position={islandPosition}
+                        scale={[.7,.7,.7]}
                         rotation={[0.1, 4.7, 0]}
                         
                     />;
@@ -108,6 +108,12 @@ const Home = () => {
                     
                 </Suspense>
             </Canvas>
+            <div class="spacer wave-svg-layer-bluepurpletop">
+
+            </div>
+            <div class="spacer wave-svg-layer-undersea-bottom">
+
+            </div>
         </section>
 
 

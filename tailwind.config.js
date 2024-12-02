@@ -30,12 +30,13 @@ export default {
         }
       },
       fontFamily: {
-        worksans: ["Work Sans", "sans-serif"],
+        worksans: ["WorkSans", "sans-serif"],
         poppins: ['Poppins', "sans-serif"],
         VT323: ['VT323', "sans-serif"],
         jersey10: ['Jersey 10', "sans-serif"],
-        dynapuff: ['Dyna Puff'],
-        silkscreen: ['Silkscreen'],
+        dynapuff: ['DynaPuff', "sans-serif"],
+        silkscreen: ['Silkscreen', "sans-serif"],
+        nunito: ['Nunito', "sans-serif"],
       },
       boxShadow: {
         card: '0px 1px 2px 0px rgba(0, 0, 0, 0.05)'

@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=DynaPuff:wdth@75&family=Jersey+10&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200..700&family=Silkscreen:wght@400;700&family=VT323&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -220,12 +219,53 @@ body:has(.card[data-color="green"]:hover) {
 
 }
 
-.jersey-text {
-  font-family: "Jersey 10";
+.dynapuff-regular {
+  font-family: "DynaPuff", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 75;
 }
 
-.dynapuff-text {
-  font-family: "Dyna Puff";
+.oswald-regular {
+  font-family: "Oswald", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.nunito-regular {
+  font-family: "Nunito", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.nunito-bold {
+  font-family: "Nunito", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.nunito-extrabold {
+  font-family: "Nunito", serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.jersey-10-regular {
+  font-family: "Jersey 10", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.vt323-regular {
+  font-family: "VT323", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .silkscreen-regular {
@@ -254,12 +294,34 @@ body:has(.card[data-color="green"]:hover) {
   
 }
 
-.wave-svg-layer {
+.wave-svg-layer-redbluebottom {
   background-image: url('./assets/svg-low-waves.svg');
   position: relative;
   top: -8px;
 }
 
+.wave-svg-layer-bluepurpletop {
+  background-image: url('./assets/lw-frontpage-bluelayers.svg');
+  position: relative;
+  top: -8px;
+}
+
+.wave-svg-layer-undersea-bottom {
+  background-image: url('./assets/lw-frontpage-bottom.svg');
+  position: relative;
+  top: -8px;
+}
+.blob-svg-layer-yg {
+  background-image: url('./assets/blob-frontpage-green.svg');
+  position: relative;
+  top: -8px;
+}
+
+.blob-svg-layer-p {
+  background-image: url('./assets/blob-frontpage-purple.svg');
+  position: relative;
+  top: -8px;
+}
 
 .image-button{
   width: 600px; /* Fixed width for button */
