@@ -53,11 +53,11 @@ const Contact = () => {
     
 
     return (
-        
-        <section className="relative flex lg:flex-row flex-col max-container">
+        <div class="spacer wave-svg-layer">
+        <section className="relative flex lg:flex-row flex-col max-container w-[600px]">
             
             <div className="flex-1 min-w-[50%] flex flex-col">
-                <h1 className="head-text">Reach Out</h1>
+                <h1 className="silkscreen-regular text-4xl text-blue-100 stretchtext-vert">Reach Out</h1>
 
 
                 <form
@@ -65,7 +65,9 @@ const Contact = () => {
                 onSubmit={handleSubmit}
                 className="w-full flex flex-col gap-7 my-14"
                 >
-                <label className="text-black-500">
+
+<div className="flex flex-row gap-4 w-full">
+                <label className="text-blue-100 silkscreen-regular w-full text-l">
                     Name
                     <input
                     type="text"
@@ -79,7 +81,7 @@ const Contact = () => {
                     onBlur={handleBlur}
                     />
                 </label>
-                <label className="text-black-500">
+                <label className="text-blue-100 silkscreen-regular w-full text-l">
                     E-Mail
                     <input
                     type="email"
@@ -93,7 +95,8 @@ const Contact = () => {
                     onBlur={handleBlur}
                     />
                 </label>
-                <label className="text-black-500">
+                </div>
+                <label className="text-blue-100 silkscreen-regular text-l">
                     Your Message
                     <textarea
                     name="message"
@@ -107,9 +110,10 @@ const Contact = () => {
                     onBlur={handleBlur}
                     />
                 </label>
+                <div className="flex justify-center">
                 <button
                     type="submit"
-                    className="btn"
+                    className="image-btn silkscreen-regular spacer-btn button-svg-layer text-white text-4xl "
                     disabled={isLoading}
                     onFocus={handleFocus}
                     onBlur={handleBlur}
@@ -118,42 +122,15 @@ const Contact = () => {
 
 
                     </button>
+                    </div>
                 </form>
-                </div>
-                
-                <div className='lg:w-1/2 w-full lg:h-auto md:h-[550px] h-[350px]'>
-        <Canvas
-          camera={{
-            position: [0, 0, 5],
-            fov: 75,
-            near: 0.1,
-            far: 1000,
-          }}
-        >
-          <directionalLight position={[0, 0, 1]} intensity={2.5} />
-          <ambientLight intensity={1} />
-          <pointLight position={[5, 10, 0]} intensity={2} />
-          <spotLight
-            position={[10, 10, 10]}
-            angle={0.15}
-            penumbra={1}
-            intensity={2}
-          />
-
-          <Suspense fallback={<Loader />}>
-            <Trout
-              currentAnimation={currentAnimation}
-              position={[0.5, 0.35, 0]}
-              rotation={[12.629, -0.6, 0]}
-              scale={[0.5, 0.5, 0.5]}
-            />
-          </Suspense>
-        </Canvas>
-      </div>
+            </div>
+            
+            
 
                 </section>
                 
-                
+                </div>          
                 
     )
 }

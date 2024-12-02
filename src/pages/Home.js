@@ -104,7 +104,7 @@ const Home = () => {
                         position={ufoPosition}
                         rotation={[.4, 5.2, -.2]}
                     />;
-                    <Fish />;
+                    
                     
                 </Suspense>
             </Canvas>

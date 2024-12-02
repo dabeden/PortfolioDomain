@@ -5,23 +5,27 @@ import { Link } from "react-router-dom";
 const HomeInfo = ({ currentStage }) => {
   if (currentStage === 1)
     return (
-      <h1 className=' sm:text-xl lg:text-2xl sm:leading-snug text-center info-box-gs-peachtojet py-4 px-8 text-white mx-5'>
-        Hello I'm
-        <span className='font-bold mx-2 text-yellow-100'>Devon</span>
-        
-        <br />
-        A Software Engineer and Game Developer from Florida
-      </h1>
+      <div className='info-box'>
+        <p className=' font-medium  text-center silkscreen-regular reduce-spacing'>
+          Hello, I'm  <span className='font-semibold mx-2 text-yellow-100'> Devon </span>
+          <br/>Software Engineer and Game Developer based in Florida
+        </p>
+
+        <Link to='/aboutme' className='increase-spacing neo-brutalism-white neo-btn silkscreen-regular'>
+          Learn more
+          {/*<img src={arrow} alt='arrow' className='w-4 h-4 object-contain' />*/}
+        </Link>
+      </div>
     );
 
   if (currentStage === 2) {
     return (
       <div className='info-box'>
-        <p className='font-medium sm:text-xl text-center'>
+        <p className='font-medium  text-center silkscreen-regular reduce-spacing'>
           Strong Programming Foundational Skills
         </p>
 
-        <Link to='/aboutme' className='neo-brutalism-white neo-btn'>
+        <Link to='/aboutme' className='increase-spacing-lite neo-brutalism-white neo-btn silkscreen-regular'>
           Learn more
           {/*<img src={arrow} alt='arrow' className='w-4 h-4 object-contain' />*/}
         </Link>
@@ -32,11 +36,11 @@ const HomeInfo = ({ currentStage }) => {
   if (currentStage === 3) {
     return (
       <div className='info-box'>
-        <p className='font-medium text-center sm:text-xl'>
+        <p className='font-medium  text-center silkscreen-regular reduce-spacing'>
           I'm currently looking to improve my skills by working with more experienced Developers. <br /> <span className='font-semibold mx-2 text-white'> Think I might make a good fit on your team? </span>
         </p>
 
-        <Link to='/projects' className='neo-brutalism-white neo-btn'>
+        <Link to='/projects' className='increase-spacing neo-brutalism-white neo-btn silkscreen-regular'>
           Visit my portfolio
           {/*<img src={arrow} alt='arrow' className='w-4 h-4 object-contain' />*/}
         </Link>
@@ -47,12 +51,12 @@ const HomeInfo = ({ currentStage }) => {
   if (currentStage === 4) {
     return (
       <div className='info-box'>
-      <p className='font-medium sm:text-xl text-center'>
+      <p className='font-medium  text-center silkscreen-regular reduce-spacing'>
         Do you need a Game Dev, Database Engineer, Data Analyst, Software Engineer, Front-End Dev, Back-End Dev?
         <br/> feel free to reach out on my contact page!
       </p>
 
-      <Link to='/contactme' className='neo-brutalism-white neo-btn'>
+      <Link to='/contactme' className='increase-spacing neo-brutalism-white neo-btn silkscreen-regular'>
         Let's talk
         {/*<img src={arrow} alt='arrow' className='w-4 h-4 object-contain' />*/}
       </Link>
