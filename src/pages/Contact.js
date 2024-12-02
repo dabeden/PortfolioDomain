@@ -52,21 +52,21 @@ const Contact = () => {
     const handleBlur = () => {};
     
 
-    return (
-        <div class="spacer wave-svg-layer">
-        <section className="relative flex lg:flex-row flex-col max-container w-[600px]">
+return (
+<div class="spacer wave-svg-layer">
+    <section className="relative flex lg:flex-row flex-col max-container w-[600px]">
             
-            <div className="flex-1 min-w-[50%] flex flex-col">
-                <h1 className="silkscreen-regular text-4xl text-blue-100 stretchtext-vert">Reach Out</h1>
+         <div className="flex-1 min-w-[50%] flex flex-col">
+            <h1 className="silkscreen-regular text-4xl text-blue-100 stretchtext-vert">Reach Out</h1>
 
 
-                <form
+            <form
                 ref={formRef}
                 onSubmit={handleSubmit}
                 className="w-full flex flex-col gap-7 my-14"
                 >
 
-<div className="flex flex-row gap-4 w-full">
+            <div className="flex flex-row gap-4 w-full">
                 <label className="text-blue-100 silkscreen-regular w-full text-l">
                     Name
                     <input
@@ -111,26 +111,26 @@ const Contact = () => {
                     />
                 </label>
                 <div className="flex justify-center">
-                <button
-                    type="submit"
-                    className="image-btn silkscreen-regular spacer-btn button-svg-layer text-white text-4xl "
-                    disabled={isLoading}
-                    onFocus={handleFocus}
-                    onBlur={handleBlur}
-                    >
-                        {isLoading ? 'Sending...' : 'Send Message'}
+                    <button
+                        type="submit"
+                        className="silkscreen-regular  image-button spacer-button button-svg-layer text-white text-4xl "
+                        disabled={isLoading}
+                        onFocus={handleFocus}
+                        onBlur={handleBlur}
+                        >
+                            {isLoading ? 'Sending...' : 'Send Message'}
 
 
                     </button>
-                    </div>
-                </form>
-            </div>
+                </div>
+            </form>
+        </div>
             
             
 
-                </section>
+    </section>
                 
-                </div>          
+</div>          
                 
     )
 }

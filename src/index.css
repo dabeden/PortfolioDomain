@@ -260,25 +260,28 @@ body:has(.card[data-color="green"]:hover) {
   top: -8px;
 }
 
-.image-btn{
-  
-    width: 600px; /* Fixed width for button */
-    height: 150px; /* Fixed height for button */
-    padding: 0; /* Remove default padding */
-    border-radius: 10px;
-    position: relative;
-    z-index: 10;
+
+.image-button{
+  width: 600px; /* Fixed width for button */
+  height: 150px; /* Fixed height for button */
+  position: relative;
+  z-index: 10;
 }
-.spacer-btn {
-  aspect-ratio: 960/540; /* Maintain aspect ratio */
+
+
+.spacer-button {
+
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  pointer-events: none; /* Make sure the background layer does not interfere with the button's interaction */
+
+
 }
+
 
 .button-svg-layer {
   background-image: url('./assets/button-grid.svg');
+
 }
 
 .stretchtext-vert {
