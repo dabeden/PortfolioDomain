@@ -52,7 +52,7 @@ const Contact = () => {
     
 
 return (
-<div class="spacer wave-svg-layer-redbluebottom">
+<div className="spacer wave-svg-layer-redbluebottom">
     <section className="relative flex lg:flex-row flex-col max-container w-[600px]">
             
          <div className="flex-1 min-w-[50%] flex flex-col">

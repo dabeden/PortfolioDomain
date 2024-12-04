@@ -1,12 +1,15 @@
 import {Suspense, React, useRef, useEffect, useState, forwardRef} from "react";
 import {Canvas} from '@react-three/fiber';
 import {Loader} from '../components/index.js';
+import Tilt from "react-tilt";
+import { motion, useInView } from "framer-motion";
 
 import Island from "../models/Island.jsx"
 import Sky from "../models/Sky.jsx"
 import Ufo from "../models/Ufo.jsx";
+import HomeInfo from "../components/HomeInfo.js";
 
-import HomeInfo from "../components/HomeInfo.js"
+import { fadeIn, textVariant } from "../utils/motion.js";
 
 const Home = () => {
     const images = [
@@ -105,11 +108,32 @@ const Home = () => {
                     
                 </Suspense>
             </Canvas>
-            <div class="spacer wave-svg-layer-bluepurpletop">
-
+            <div className="spacer wave-svg-layer-bluepurpletop">
+                <div className="flex h-full  items-end">
+                    <motion.div variants={textVariant(0.5)}
+                    initial="hidden"
+                    animate="show"
+                    className="px-20 text-blue-200 font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px] nunito-bold"
+                    >
+                        Overview.
+                    </motion.div>
+                    
+                    
+                </div>
             </div>
-            <div class="spacer wave-svg-layer-undersea-bottom">
+            <div className="spacer wave-svg-layer-undersea-bottom">
+                    <div className="flex items-start ">
+                    <motion.p
+                        variants={fadeIn("up", "", 1, 1)}
+                        initial="hidden"
+                        animate="show"
+                        className='mt-4 px-40 text-blue-300 text-secondary text-[17px] max-w-3xl leading-[30px] nunito-bold'
+                    >
+                        I’m a motivated Fullstack Developer with experience in JavaScript, TypeScript, Python, C++, Unreal Engine, and UI design.
 
+                        I collaborate closely with clients to deliver tailored, effective solutions and seek opportunities to grow and learn as a programmer.
+                    </motion.p>
+                    </div>
             </div>
         </section>
 
