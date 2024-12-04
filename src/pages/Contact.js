@@ -1,6 +1,5 @@
 import React, { useState, Suspense, useRef } from "react";
 import emailjs from '@emailjs/browser';
-import GradientBackground from "../components/GradientBackground";
 import Loader from "../components/Loader";
 import Trout from "../models/Trout.jsx";
 import { Canvas } from "@react-three/fiber"; 

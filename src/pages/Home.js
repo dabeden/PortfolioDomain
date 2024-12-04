@@ -1,14 +1,11 @@
 import {Suspense, React, useRef, useEffect, useState, forwardRef} from "react";
-import {Button} from 'react-bootstrap';
 import {Canvas} from '@react-three/fiber';
-import {GradientBackground, Card, Grid, Loader} from '../components/index.js';
+import {Loader} from '../components/index.js';
 
 import Island from "../models/Island.jsx"
-import Cottage from "../models/Cottage.jsx"
 import Sky from "../models/Sky.jsx"
 import Ufo from "../models/Ufo.jsx";
 
-import Fish from "../models/Fish.jsx";
 import HomeInfo from "../components/HomeInfo.js"
 
 const Home = () => {
