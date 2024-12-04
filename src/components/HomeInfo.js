@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 
 
-const HomeInfo = ({ currentStage }) => {
+const HomeInfo = ({ currentStage, onScrollToAbout }) => {
   if (currentStage === 1)
     return (
       <div className='info-box'>
@@ -11,10 +11,13 @@ const HomeInfo = ({ currentStage }) => {
           <br/>A Software Engineer and Game Developer based in Florida
         </p>
 
-        <Link to='/aboutme' className='increase-spacing neo-brutalism-white neo-btn silkscreen-regular'>
-          Learn more
+        <button 
+          onClick={onScrollToAbout}
+          className="increase-spacing neo-brutalism-white neo-btn silkscreen-regular"
+        >
+          Dive Down
           {/*<img src={arrow} alt='arrow' className='w-4 h-4 object-contain' />*/}
-        </Link>
+        </button>
       </div>
     );
 

@@ -10,6 +10,7 @@ import Ufo from "../models/Ufo.jsx";
 import HomeInfo from "../components/HomeInfo.js";
 
 import { fadeIn, textVariant } from "../utils/motion.js";
+import adminPfp from "../assets/icons/me.png";
 
 const Home = () => {
     const images = [
@@ -59,6 +60,19 @@ const Home = () => {
     
     }
 
+
+    const aboutMeRef = useRef(null); // Create a ref for the About Me section
+
+    // Scroll to About Me section
+    const scrollToAboutMe = () => {
+      if (aboutMeRef.current) {
+        aboutMeRef.current.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    };
+
     //const [islandScale, islandPosition, islandRotation] = adjustModelForScreenSize();
     const [islandScale, islandPosition] = adjustIslandForScreenSize();
     const [ufoScale, ufoPosition] = adjustUfoForScreenSize();
@@ -66,7 +80,7 @@ const Home = () => {
     return (
         <section className="w-fill h-screen relative">
             <div className="absolute top-28 left-0 right-0 z-10 flex items-center justify-center">
-                {currentStage && <HomeInfo currentStage={currentStage} />}
+                {currentStage && <HomeInfo currentStage={currentStage} onScrollToAbout={scrollToAboutMe} />}
             </div>
             <Canvas
                 className={`we-full h-screen bg-transparent ${isRotating ? 
@@ -108,33 +122,60 @@ const Home = () => {
                     
                 </Suspense>
             </Canvas>
-            <div className="spacer wave-svg-layer-bluepurpletop">
-                <div className="flex h-full  items-end">
-                    <motion.div variants={textVariant(0.5)}
-                    initial="hidden"
-                    animate="show"
-                    className="px-20 text-blue-200 font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px] nunito-bold"
-                    >
-                        Overview.
-                    </motion.div>
-                    
-                    
-                </div>
-            </div>
-            <div className="spacer wave-svg-layer-undersea-bottom">
-                    <div className="flex items-start ">
-                    <motion.p
-                        variants={fadeIn("up", "", 1, 1)}
-                        initial="hidden"
-                        animate="show"
-                        className='mt-4 px-40 text-blue-300 text-secondary text-[17px] max-w-3xl leading-[30px] nunito-bold'
-                    >
-                        I’m a motivated Fullstack Developer with experience in JavaScript, TypeScript, Python, C++, Unreal Engine, and UI design.
+<div className="spacer wave-svg-layer-bluepurpletop">
+  <div className="flex flex-col h-full justify-between"> {/* Ensure the container is full height and content is spaced */}
+    {/* Content that should be at the top */}
+    <div>
+      {/* Any content you want at the top goes here */}
+    </div>
 
-                        I collaborate closely with clients to deliver tailored, effective solutions and seek opportunities to grow and learn as a programmer.
-                    </motion.p>
-                    </div>
-            </div>
+    {/* 'Overview' text at the bottom */}
+    <motion.div
+      variants={textVariant(0.5)}
+      initial="hidden"
+      animate="show"
+      className="px-10 text-blue-200 font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px] nunito-bold"
+    >
+      Overview.
+    </motion.div>
+  </div>
+</div>
+
+<div className="spacer wave-svg-layer-undersea-bottom">
+  <div red={aboutMeRef} className="about-me-section flex items-start justify-between w-full">
+    {/* Left side - Text */}
+    <div>
+    <motion.p
+      variants={fadeIn("up", "", 1, 1)}
+      initial="hidden"
+      animate="show"
+      className="max-w-sm ml-20 mt-4 text-blue-300 text-secondary text-[17px] max-w-3xl leading-[30px] nunito-bold "
+    >
+      I’m a motivated Fullstack Developer with experience in JavaScript, TypeScript, Python, C++, Unreal Engine, and UI design.
+      I collaborate closely with clients to deliver tailored, effective solutions and seek opportunities to grow and learn as a programmer.
+    
+
+    </motion.p>
+    <motion.p
+      variants={fadeIn("up", "", 2, 1.2)}
+      initial="hidden"
+      animate="show"
+      >
+      <img
+        src={adminPfp}
+        alt="Dev Pfp"
+        className="w-[280px] h-[280px] rounded-full border-[20px] border-blue-300 transform translate-x-40 translate-y-10"
+      />
+    </motion.p>
+    </div>
+
+    {/* Right side - Image */}
+    <div className="flex items-center justify-center">
+      Hello!
+    </div>
+  </div>
+</div>
+
         </section>
 
 

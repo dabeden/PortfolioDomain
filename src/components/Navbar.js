@@ -13,7 +13,7 @@ const Navbar = () => {
                 <img
                 src={alienLogo}
                 alt="Dev Home Logo"
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain rounded-xl"
                 />
             </NavLink>
             <nav className="silkscreen-regular sm:text-xl lg:text-xl flex ml-auto text-lg gap-7 font-medium">
