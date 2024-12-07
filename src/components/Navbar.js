@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-import alienLogo from "../assets/icons/alien.png";
+import alienLogo from "../assets/icons/alien2.png";
 
 const Navbar = () => {
     return (
