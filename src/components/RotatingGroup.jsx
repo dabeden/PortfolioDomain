@@ -1,6 +1,15 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useFrame, useThree } from "@react-three/fiber";
 import IconSphere from "./IconSphere";
+import * as THREE from "three"; 
+
+
+const interpolateColor = (color1, color2, t) => {
+  const c1 = new THREE.Color(color1);
+  const c2 = new THREE.Color(color2);
+  return c1.lerp(c2, t); // Linearly interpolate between colors
+};
+
 
 const RotatingGroup = ({ icons}) => {
   const groupRef = useRef();
@@ -14,6 +23,17 @@ const RotatingGroup = ({ icons}) => {
   const rotationSpeed = useRef(0);
   // Define a damping factor to control rotation damping
   const dampingFactor = 0.95;
+
+  const color1 = "#21fc96"; 
+  const color2 = "#6c5eff"; 
+  
+  const colorArray = icons.map((_, i) => {
+    const t = i / (icons.length - 1); // Calculate t based on position
+    return interpolateColor(color1, color2, t);
+  });
+
+
+  
 
   // Handle pointer (mouse or touch) down event
   const handlePointerDown = (event) => {
@@ -163,13 +183,14 @@ const RotatingGroup = ({ icons}) => {
           {icons.map((icon, index) => {
             const angle = (index / icons.length) * Math.PI * 2; // Calculate angle for circular layout
             
-            console.log(`Ico ${index}: angle=`,angle);
+            
             const radius = 3; // Distance from the center
             const x = Math.cos(angle) * radius;
             const z = Math.sin(angle) * radius;
             const scale = [0.7, 0.7, 0.7];
             const rotationY = -angle + (Math.PI/2);
-           
+            const color = colorArray[index];
+            console.log(`color: `,color);
     
             return (
               <IconSphere
@@ -177,9 +198,9 @@ const RotatingGroup = ({ icons}) => {
                 position={[x, 0, z]}
                 rotationY={rotationY}
                 icon={icon}
-                rotation={[0, angle, 0]} 
                 scale={scale}
-              />
+                color={color}
+                />
             );
           })}
         </group>

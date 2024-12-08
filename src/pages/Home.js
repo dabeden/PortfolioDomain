@@ -158,11 +158,18 @@ const Home = () => {
 
     {/* 'Overview' text at the bottom */}
     <motion.div
-      variants={textVariant(0.5)}
+      variants={fadeIn("up", "", 1, 1)}
       initial="hidden"
       animate="show"
-      className="about-me-section px-10 text-blue-200 font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px] nunito-bold"
+      className="about-me-section px-10 text-blue-200 font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px] nunito-bold justify-center"
       ref={aboutMeRef}
+
+      style={{
+        justifyContent: 'center',
+        display: 'flex',
+
+        
+      }}
     >
       Overview.
     </motion.div>
@@ -170,14 +177,21 @@ const Home = () => {
 </div>
 
 <div className="spacer wave-svg-layer-undersea-bottom">
-  <div  className=" flex items-start justify-between w-full">
+  <div  className=" flex items-start justify-center w-full">
     {/* Left side - Text */}
     <div>
     <motion.p
       variants={fadeIn("up", "", 1, 1)}
       initial="hidden"
       animate="show"
-      className="max-w-sm ml-20 mt-4 text-blue-300 text-secondary text-[17px] max-w-3xl leading-[30px] nunito-bold "
+      className="max-w-sm   text-blue-300 text-secondary text-[17px] max-w-3xl leading-[30px] nunito-bold "
+      
+      style={{
+        justifyContent: 'center',
+        display: 'flex',
+        textAlign: 'center',
+        
+      }}
     >
       I’m a motivated Fullstack Developer with expertise in JavaScript, TypeScript, Python, C++, Unreal Engine, and UI design.
       I collaborate closely with clients to deliver tailored, effective solutions and seek opportunities to grow and learn as a programmer.
@@ -192,30 +206,38 @@ const Home = () => {
       <img
         src={adminPfp}
         alt="Dev Pfp"
-        className="w-[280px] h-[280px] rounded-full border-[20px] border-blue-300 transform translate-x-40 translate-y-10"
+        className="w-[200px] h-[200px] rounded-full border-[4px]  border-blue-300 transform  translate-x-20 translate-y-10"
       />
     </motion.p>
     </div>
 
     {/* Right side - Image */}
-    <div className="flex items-center justify-center">
-    <motion.div
-      variants={fadeIn("up", "", 3, 1)}
-      initial="hidden"
-      animate="show"
+    
+  </div>
+  <motion.div
+        variants={fadeIn("up", "", 3, 1)}
+        initial="hidden"
+        animate="show"
+        style={{
+          position: 'relative',
+          display: 'flex',
+          
+          top: '50px',
+          right: '',
+          justifyContent: 'center', 
+      }}
       >
       <CanvasBox
-      style={{
-        position: 'relative',
-        zIndex: 1,             // Ensure canvas is on top
-        pointerEvents: 'auto', // Ensure canvas can capture mouse events
-      }}
-      
       icons={icons}
       />
       </motion.div>
-    </div>
-  </div>
+</div>
+  <div className="wave-svg-layer-undersea-below spacer "
+    style={{marginTop:'-16px',
+      position: "relative",
+      zIndex: -1,
+    }}>
+      
 </div>
 
         </section>
@@ -226,3 +248,6 @@ const Home = () => {
   };
 
 export default Home;
+
+//title="Technologies"
+      //description="Familiar Frameworks"

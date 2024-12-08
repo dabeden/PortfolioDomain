@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useGLTF } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber"; // Correct import for useFrame
-
+import { useFrame } from "@react-three/fiber"; 
 import ufoScene from '../assets/ufo.glb';
 
 const Ufo = ({ isRotating, ...props }) => {
@@ -23,7 +22,8 @@ const Ufo = ({ isRotating, ...props }) => {
 
     // Animation loop for bobbing
     useFrame((state) => {
-        if (isRotating && ref.current) {
+        if (ref.current) {
+            //if (isRotating && ref.current) {
             const time = state.clock.getElapsedTime(); // Get elapsed time
             const [x, y, z] = initialPosition.current;
             // Apply bobbing effect as an offset to the initial position

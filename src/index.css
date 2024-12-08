@@ -311,6 +311,19 @@ body:has(.card[data-color="green"]:hover) {
   position: relative;
   top: -8px;
 }
+
+.wave-svg-layer-whitetop {
+  background-image: url('./assets/waves-top-white.svg');
+  position: relative;
+  top: -8px;
+}
+
+.wave-svg-layer-undersea-below {
+  background-image: url('./assets/waves-dark-bottom.svg');
+  position: relative;
+  top: -8px;
+}
+
 .blob-svg-layer-yg {
   background-image: url('./assets/blob-frontpage-green.svg');
   position: relative;

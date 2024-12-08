@@ -1,14 +1,15 @@
-import React, { useRef } from "react";
+import React, { useRef, useMemo } from "react";
 import { Sphere, Decal, useTexture } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import { Vector3 } from "three"; 
 
 
 
 
-const IconSphere = ({ position,rotation, rotationY, scale, icon, scaleFactor = 1 }) => {
+const IconSphere = ({ position, rotationY, scale, icon, scaleFactor = 1,color}) => {
   const texture = useTexture(icon);
   const sphereRef= useRef();
+
+  
 
   useFrame(() => {
     if (sphereRef.current) {
@@ -25,9 +26,9 @@ const IconSphere = ({ position,rotation, rotationY, scale, icon, scaleFactor = 1
       <meshStandardMaterial 
       transparent={true} 
       metalness={0.3}  // Pearls are somewhat metallic
-      roughness={0.1}  // Pearls have a smooth surface
+      roughness={0.01}  // Pearls have a smooth surface
       envMapIntensity={1.5} // Adds reflection to simulate shine
-      color={0xf5efdf}  // You can adjust to a pearl color, e.g., off-white />
+      color={color}  // You can adjust to a pearl color, e.g., off-white />
       />
 
       <Decal
