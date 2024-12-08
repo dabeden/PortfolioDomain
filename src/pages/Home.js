@@ -1,7 +1,7 @@
 import {Suspense, React, useRef, useEffect, useState, forwardRef} from "react";
 import {Canvas} from '@react-three/fiber';
 import {Loader} from '../components/index.js';
-import Tilt from "react-tilt";
+//import Tilt from "react-tilt";
 import { motion, useInView } from "framer-motion";
 import { Sphere, OrbitControls, useTexture } from "@react-three/drei";
 
@@ -170,10 +170,12 @@ const Home = () => {
       animate="show"
       className="about-me-section px-10 text-blue-200 font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px] nunito-bold justify-center"
       ref={aboutMeRef}
+      
 
       style={{
         justifyContent: 'center',
         display: 'flex',
+        zIndex: 20,
 
         
       }}

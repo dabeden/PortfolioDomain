@@ -34,8 +34,12 @@ const ParticlesComponent = (props) => {
     () => ({
       background: {
         color: {
-          value: "#1E2F97",
+          value: "#615e82",
         },
+        image: "url('images/gridhole.png')",
+        position: "center center", // Position of the image
+    repeat: "no-repeat", // Whether to repeat the image
+    size: "cover",
       },
       fpsLimit: 120,
       interactivity: {
@@ -51,11 +55,11 @@ const ParticlesComponent = (props) => {
         },
         modes: {
           push: {
-            distance: 200,
-            duration: 15,
+            distance: 700,
+            duration: 700,
           },
           grab: {
-            distance: 150,
+            distance: 1,
           },
         },
       },
@@ -64,14 +68,14 @@ const ParticlesComponent = (props) => {
           value: "#FFFFFF",
         },
         links: {
-          color: "#FFFFFF",
+          color: "#000000",
           distance: 150,
-          enable: true,
+          enable: false,
           opacity: 0.3,
           width: 1,
         },
         move: {
-          direction: "none",
+          direction: "top",
           enable: true,
           outModes: {
             default: "bounce",
@@ -93,7 +97,7 @@ const ParticlesComponent = (props) => {
           type: "circle",
         },
         size: {
-          value: { min: 1, max: 3 },
+          value: { min: 1, max: 5 },
         },
       },
       detectRetina: true,

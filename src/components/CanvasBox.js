@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import IconSphere from './IconSphere';
 import RotatingGroup from './RotatingGroup';
+import ParticlesComponent from './Particles';
+
 
 const CanvasBox = ({ title, description, icons }) => {
 
@@ -27,10 +29,13 @@ const CanvasBox = ({ title, description, icons }) => {
       }}
     >
       
+
+      <div style={{ position: "relative", zIndex: 1 }}>
       <h2>{title}</h2>
       <p>{description}</p>
 
       <div style={{ width: "100%", height: "300px" }}>
+        
         <Canvas 
         style={{position: 'relative',
        
@@ -46,6 +51,7 @@ const CanvasBox = ({ title, description, icons }) => {
           <RotatingGroup icons={icons}  />
         </Canvas>
       </div>
+    </div>
     </div>
   );
 };
