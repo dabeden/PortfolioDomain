@@ -45,8 +45,6 @@ const Home = () => {
       };
     
     
-    
-    
     const adjustUfoForScreenSize = () => {
         let screenScale, screenPosition;
     
@@ -66,11 +64,20 @@ const Home = () => {
 
 
     const aboutMeRef = useRef(null); // Create a ref for the About Me section
-
+    const frameworkRef = useRef(null);
     // Scroll to About Me section
     const scrollToAboutMe = () => {
       if (aboutMeRef.current) {
         aboutMeRef.current.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    };
+
+    const scrollToFrameworks = () => {
+      if (frameworkRef.current) {
+        frameworkRef.current.scrollIntoView({
           behavior: "smooth",
           block: "start",
         });
@@ -102,7 +109,7 @@ const Home = () => {
     return (
         <section className="w-fill h-screen relative">
             <div className="absolute top-28 left-0 right-0 z-10 flex items-center justify-center">
-                {currentStage && <HomeInfo currentStage={currentStage} onScrollToAbout={scrollToAboutMe} />}
+                {currentStage && <HomeInfo currentStage={currentStage} onScrollToAbout={scrollToAboutMe} onScrollToFrameworks={scrollToFrameworks}/>}
             </div>
             <Canvas
                 
@@ -218,6 +225,7 @@ const Home = () => {
         variants={fadeIn("up", "", 3, 1)}
         initial="hidden"
         animate="show"
+        ref={frameworkRef}
         style={{
           position: 'relative',
           display: 'flex',
@@ -225,6 +233,7 @@ const Home = () => {
           top: '50px',
           right: '',
           justifyContent: 'center', 
+          
       }}
       >
       <CanvasBox

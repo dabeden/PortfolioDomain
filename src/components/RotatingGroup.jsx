@@ -24,8 +24,8 @@ const RotatingGroup = ({ icons}) => {
   // Define a damping factor to control rotation damping
   const dampingFactor = 0.95;
 
-  const color1 = "#21fc96"; 
-  const color2 = "#6c5eff"; 
+  const color1 = "#433a9e"; 
+  const color2 = "#7d9e3a"; 
   
   const colorArray = icons.map((_, i) => {
     const t = i / (icons.length - 1); // Calculate t based on position

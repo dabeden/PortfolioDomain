@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 
 
-const HomeInfo = ({ currentStage, onScrollToAbout }) => {
+const HomeInfo = ({ currentStage, onScrollToAbout , onScrollToFrameworks}) => {
   if (currentStage === 1)
     return (
       <div className='info-box'>
@@ -25,13 +25,16 @@ const HomeInfo = ({ currentStage, onScrollToAbout }) => {
     return (
       <div className='info-box'>
         <p className='font-medium  text-center silkscreen-regular reduce-spacing'>
-          Strong Programming Foundational Skills
+          Strong Programming Foundational Skills and Modern Fullstack Familiarity
         </p>
 
-        <Link to='/aboutme' className='increase-spacing-lite neo-brutalism-white neo-btn silkscreen-regular'>
-          Learn more
+        <button 
+          onClick={onScrollToFrameworks}
+          className="increase-spacing neo-brutalism-white neo-btn silkscreen-regular"
+        >
+          FAMILIAR FRAMEWORKS
           {/*<img src={arrow} alt='arrow' className='w-4 h-4 object-contain' />*/}
-        </Link>
+        </button>
       </div>
     );
   }
@@ -55,7 +58,7 @@ const HomeInfo = ({ currentStage, onScrollToAbout }) => {
     return (
       <div className='info-box'>
       <p className='font-medium  text-center silkscreen-regular reduce-spacing'>
-        Do you need a Game Dev, Database Engineer, Data Analyst, Software Engineer, Front-End Dev, Back-End Dev?
+        Need a Game Dev, Database Engineer, Data Analyst, Software Engineer, Front-End Dev, Back-End Dev?
         <br/> feel free to reach out on my contact page!
       </p>
 
