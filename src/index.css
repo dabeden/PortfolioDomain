@@ -324,17 +324,7 @@ body:has(.card[data-color="green"]:hover) {
   top: -8px;
 }
 
-.blob-svg-layer-yg {
-  background-image: url('./assets/blob-frontpage-green.svg');
-  position: relative;
-  top: -8px;
-}
 
-.blob-svg-layer-p {
-  background-image: url('./assets/blob-frontpage-purple.svg');
-  position: relative;
-  top: -8px;
-}
 
 .image-button{
   width: 600px; /* Fixed width for button */
