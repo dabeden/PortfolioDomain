@@ -361,3 +361,7 @@ body:has(.card[data-color="green"]:hover) {
 .increase-spacing {
   letter-spacing: 2px;
 }
+
+.cyan-text{
+  color: cyan;
+}
